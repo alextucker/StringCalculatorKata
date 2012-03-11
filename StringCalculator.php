@@ -3,7 +3,12 @@
 class StringCalculator {
    
    public function add($string) {
-      return (int) $string;
+      $numbers = explode(',', $string);
+      $total = 0;
+      foreach ($numbers as $number) {
+	 $total += (int) $number;
+      }
+      return $total;
    }
 
 }

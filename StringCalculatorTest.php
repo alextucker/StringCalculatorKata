@@ -52,4 +52,33 @@ class StringCalculatorTest extends PHPUnit_Framework_TestCase {
    public function test1Plus1() {
       $this->assertEquals(2, $this->calc->add('1,1'));
    }
+   
+   public function test10Plus1() {
+      $this->assertEquals(11, $this->calc->add('10,1'));
+   }
+   
+   public function test10Plus10() {
+      $this->assertEquals(20, $this->calc->add('10,10'));
+   }
+   
+   public function test0Plus0Plus0() {
+      $this->assertEquals(0, $this->calc->add('0,0,0'));
+   }
+   
+   public function test10Plus10Plus10() {
+      $this->assertEquals(30, $this->calc->add('10,10,10'));
+   }
+   
+   public function test0plus0Newline() {
+      $this->assertEquals(0, $this->calc->add("0\n0"));
+   }
+   
+   public function test1plus0Newline() {
+      $this->assertEquals(1, $this->calc->add("1\n0"));
+   }
+   
+   public function test1plus1Newline() {
+      $this->assertEquals(2, $this->calc->add("1\n1"));
+   }
+   
 }
